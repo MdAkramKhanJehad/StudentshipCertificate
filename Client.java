@@ -30,7 +30,7 @@ public class Client {
                 System.out.println("Enter password");
                 password = sc.nextLine();
 
-                System.out.println("Do you want to creat account?\nyes\tor    no");
+                System.out.println("Do you want to create account?\nyes\tor    no");
                 input = sc.nextLine();
 
                 if(input.equalsIgnoreCase("yes")){
