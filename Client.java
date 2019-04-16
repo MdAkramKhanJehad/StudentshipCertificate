@@ -14,7 +14,7 @@ public class Client {
         try {
             if (choice == 1) {
 
-
+                System.out.println("Welcome as a Student");
 
                 SerializeObject serial_io = new SerializeObject();
                 serial_io.writeSerializeList();
@@ -25,6 +25,9 @@ public class Client {
                 String name, password, input;
 
                 name = sc.nextLine();
+                System.out.println("Enter Name");
+                name = sc.nextLine();
+                System.out.println("Enter password");
                 password = sc.nextLine();
 
                 System.out.println("Do you want to creat account?\nyes\tor    no");

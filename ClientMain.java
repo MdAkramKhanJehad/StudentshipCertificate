@@ -9,7 +9,7 @@ public class ClientMain {
     public static void main(String[] args) {
         try{
             Client cl = new Client();
-            c1.initialize();
+            cl.initialize();
 
             String name, pass, temp, last;
             Scanner sc= new Scanner(System.in);

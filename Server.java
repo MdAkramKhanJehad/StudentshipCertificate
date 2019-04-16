@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashMap;
 import java.util.Map;
 
 import java.util.Scanner;
 
 public class Server {
 
-     static Map<String,Integer> map=new HashMap<String,Integer>();
+     static Map<String,Integer> map=new HashMap<>();
 
         static void initialize(){
 
@@ -38,7 +39,7 @@ public class Server {
             s1 = new ServerSocket(10000);
             Socket ss= s1.accept();
             Scanner sc2 = new Scanner(ss.getInputStream());
-
+            System.out.println("welcome to server");
             name = sc2.nextLine();
             PrintStream p = new PrintStream(ss.getOutputStream());
             if(map.containsKey(name)){
@@ -51,7 +52,7 @@ public class Server {
 
                 }else {
 
-                    System.out.println("Not enough money!");
+                    p.println("Not enough money!");
                 }
 
             }
