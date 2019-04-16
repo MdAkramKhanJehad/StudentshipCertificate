@@ -22,10 +22,21 @@ public class Client {
 
 
             } else {
-                String name, password;
+                String name, password, input;
 
                 name = sc.nextLine();
                 password = sc.nextLine();
+
+                System.out.println("Do you want to creat account?\nyes\tor    no");
+                input = sc.nextLine();
+
+                if(input.equalsIgnoreCase("yes")){
+                    //do something for acc create
+                }
+                else
+                    System.out.println("thanks ");
+
+
 
 
             }
@@ -34,6 +45,14 @@ public class Client {
 
             ex.printStackTrace();
         }
+
+
+    }
+
+
+    public void printCertificate(){
+
+
 
 
     }

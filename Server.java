@@ -1,28 +1,28 @@
 package sample;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Map;
+
 import java.util.Scanner;
 
 public class Server {
 
-    Map<String, double> map=new HashMap<String, double>();
+     static Map<String,Integer> map=new HashMap<String,Integer>();
 
         static void initialize(){
 
-        map.put("jehad", 1000.0);
-        map.put("ash", 1000.0);
-        map.put("rakib", 1000.0);
+        map.put("jehad", 1000);
+        map.put("ash", 1000);
+        map.put("rakib", 100);
 
         //System.out.println(map.containsKey("ash"));
 
 
     }
-    public void createAcc(String accName double balance){
+    public void createAcc(String accName, Integer balance){
 
         map.put(accName, balance);
 
@@ -34,19 +34,18 @@ public class Server {
         try {
              initialize();
 
-            String name, password, msg;
+            String name, pass, msg;
             s1 = new ServerSocket(10000);
             Socket ss= s1.accept();
-            Scanner sc = new Scanner(ss.getInputStream());
+            Scanner sc2 = new Scanner(ss.getInputStream());
 
-            name = sc.nextLine();
+            name = sc2.nextLine();
             PrintStream p = new PrintStream(ss.getOutputStream());
             if(map.containsKey(name)){
                 msg = "give password";
-                PrintStream p = new PrintStream(ss.getOutputStream());
                 p.println(msg);
 
-                msg = sc.nextLine();
+                pass = sc2.nextLine();
                 if(map.get(name)>100){
                     flag =1;
 
@@ -61,13 +60,10 @@ public class Server {
             }
 
             if(flag==1){
-
-
+                msg = "ok";
+                p.println(msg);
 
             }
-
-
-
 
 
 
